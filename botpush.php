@@ -4,16 +4,17 @@
 
 require "vendor/autoload.php";
 
-$access_token = '3ALKAbKFoGuJyJnoDdn0HeyfbxLFtEXBKiC0lFeoNl/XbL4WhoCZzefp2n7UDuXaCWfErIDro07BnZNggJmXJChXTIlMPo8LRJ+n1LEgbRUaKehDkiCr5p5CakHrPX+gauOGX/R5bB2e5yi7xjnHDAdB04t89/1O/w1cDnyilFU=';
+$access_token = 'swv/ypvpeNZrmpYXbIO183BNoPHv4NovCYshcQ9cvFrbUfocZFjDxMahi4MLX1n9zz22wATbUGV6w5FRbsQyK/krnzjfgVTnKVisAQ25D9iOCLwEX1TM0RzaR+6wUKIednBFQPOtVC2Cq+kH7ubq1gdB04t89/1O/w1cDnyilFU=
+';
 
-$channelSecret = '75c03f392f6e53d662d6f5a8db9e421f';
+$channelSecret = '1c3a11fc6f6e5b65f8ddd907861bce44';
 
-$pushID = 'U7ef7a449f2a5c2057eacfc02ba2eb286';
+$pushID = 'U7576c28b0302ed7798794f0737787656';
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello world');
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('สวัสดีครับ ที่นี่ที่ไหน ใช่ที่รักมั้ยครับ');
 $response = $bot->pushMessage($pushID, $textMessageBuilder);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
